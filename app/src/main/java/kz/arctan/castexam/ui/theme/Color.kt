@@ -11,9 +11,8 @@ val Green = Color(0xFF57BB85)
 val TitleGreen = Color(0xFF008B40)
 val Blue = Color(0xFF1F81A0)
 val BackgroundColor = Color(0xFFF5F5F5)
+val DarkBackGroundColor = Color(0xFF141414)
 
-val StartBackgroundGreen = Color(0xFF5ADD87)
-val EndBackGroundGreen = Color(0xFF00983D)
+val Black = Color(0xFF000000)
 
-val StartBackgroundColorBlue = Color(0xFF8BC0D1)
-val EndBackgroundColorBlue = Color(0xFF1F81A0)
+val Grey = Color(0xFFB4B4B4)

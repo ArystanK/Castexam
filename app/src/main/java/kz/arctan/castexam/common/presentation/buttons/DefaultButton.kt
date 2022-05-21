@@ -16,20 +16,21 @@ fun DefaultButton(
     text: String,
     onClick: () -> Unit,
     leadingIcon: ImageVector,
-    backgroundColor: Color
+    backgroundColor: Color,
+    contentColor: Color
 ) {
     Button(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = backgroundColor,
-            contentColor = Color.White
+            contentColor = contentColor
         ),
         modifier = modifier,
         elevation = ButtonDefaults.elevation(defaultElevation = 8.dp)
     ) {
-        Icon(leadingIcon, contentDescription = text)
+        Icon(leadingIcon, contentDescription = text, tint = contentColor)
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-            Text(text = text)
+            Text(text = text, color = contentColor)
         }
     }
 }

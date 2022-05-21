@@ -39,12 +39,10 @@ fun TextFieldWithIcon(
         placeholder = {
             Text(
                 text = placeHolder,
-                textAlign = TextAlign.End,
             )
         },
         shape = RoundedCornerShape(12.dp),
         textStyle = TextStyle(
-            textAlign = TextAlign.Center,
             textDecoration = TextDecoration.None
         ),
         singleLine = true,

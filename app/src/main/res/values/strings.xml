@@ -11,4 +11,8 @@
     <string name="password">Password</string>
 
     <string name="back">Back</string>
+
+    <string name="greetings">Hello, %1$s</string>
+
+    <string name="open_settings">Open settings</string>
 </resources>

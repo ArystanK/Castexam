@@ -30,14 +30,7 @@ class RegistrationViewModel(
                 )
             }
             RegistrationIntent.Register -> {
-                uiState = uiState.copy(
-                    validationResult = validationUseCase.validate(
-                        username = uiState.username,
-                        password = uiState.password,
-                        surname = uiState.surname,
-                        name = uiState.name
-                    )
-                )
+
             }
             is RegistrationIntent.SurnameChange -> {
                 uiState = uiState.copy(

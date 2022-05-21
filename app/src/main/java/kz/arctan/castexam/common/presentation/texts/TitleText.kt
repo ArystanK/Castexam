@@ -19,6 +19,7 @@ fun TitleText(modifier: Modifier = Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
+        modifier = modifier
     ) {
         Text(
             text = stringResource(id = R.string.app_name).replaceFirstChar { it.lowercase(Locale.ROOT) },
