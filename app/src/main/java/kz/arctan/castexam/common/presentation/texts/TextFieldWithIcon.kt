@@ -1,35 +1,35 @@
 package kz.arctan.castexam.common.presentation.texts
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DisabledVisible
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.Modifier
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kz.arctan.castexam.R
 
 @Composable
 fun TextFieldWithIcon(
     value: String,
     onValueChange: (String) -> Unit,
     icon: ImageVector,
-    placeHolder: String
+    placeHolder: String,
+    isPassword: Boolean = false
 ) {
+    var isVisible by remember { mutableStateOf(false) }
     TextField(
         value = value,
         onValueChange = onValueChange,
@@ -51,6 +51,23 @@ fun TextFieldWithIcon(
             errorIndicatorColor = Color.Transparent,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent
+        ),
+        trailingIcon = if (isPassword) {
+            {
+                IconButton(onClick = { isVisible = !isVisible }) {
+                    if (isVisible) Icon(
+                        imageVector = Icons.Default.VisibilityOff,
+                        contentDescription = stringResource(id = R.string.show_password)
+                    ) else Icon(
+                        imageVector = Icons.Default.Visibility,
+                        contentDescription = stringResource(id = R.string.show_password)
+                    )
+                }
+            }
+        } else null,
+        visualTransformation = if (isVisible) VisualTransformation.None else PasswordVisualTransformation(),
+        keyboardOptions = KeyboardOptions(
+            keyboardType = if (isPassword) KeyboardType.Password else KeyboardType.Text
         )
     )
 }
@@ -63,6 +80,7 @@ fun TextFieldWithIconPreview() {
         value = username,
         onValueChange = { username = it },
         icon = Icons.Filled.Person,
-        placeHolder = "Username"
+        placeHolder = "Username",
+        isPassword = true
     )
 }

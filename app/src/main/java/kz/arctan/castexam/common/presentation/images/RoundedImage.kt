@@ -20,7 +20,7 @@ fun RoundedImage(
         painter = image,
         contentDescription = contentDescription,
         alignment = Alignment.Center,
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Fit,
         modifier = modifier
     )
 }

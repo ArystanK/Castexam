@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_and_practice">Создай и готовься</string>
+    <string name="log_in">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="password">Пароль</string>
+    <string name="back">Назад</string>
+    <string name="greetings">Привет, %1$s</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="tests">Тесты</string>
+    <string name="questions">Вопросы</string>
+    <string name="open">Открыть</string>
+    <string name="add_new_subject">Добавить новый предмет</string>
+    <string name="subjects">Предметы</string>
+    <string name="show_password">Показать пароль</string>
+</resources>

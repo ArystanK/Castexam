@@ -1,6 +1,7 @@
 package kz.arctan.castexam.start.presentation
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,10 +16,12 @@ import kz.arctan.castexam.common.presentation.texts.TitleText
 
 @Composable
 fun StartScreen(navController: NavController) {
-    StartView(
-        navigateToLoginScreen = { navController.navigate(LOGIN_SCREEN) },
-        navigateToRegistrationScreen = { navController.navigate(REGISTRATION_SCREEN) }
-    )
+    Surface(modifier = Modifier.fillMaxSize()) {
+        StartView(
+            navigateToLoginScreen = { navController.navigate(LOGIN_SCREEN) },
+            navigateToRegistrationScreen = { navController.navigate(REGISTRATION_SCREEN) }
+        )
+    }
 }
 
 @Composable

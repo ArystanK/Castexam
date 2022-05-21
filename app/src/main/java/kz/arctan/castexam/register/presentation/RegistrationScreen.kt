@@ -2,6 +2,7 @@ package kz.arctan.castexam.register.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -19,29 +20,33 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import kz.arctan.castexam.Navigation.LOGIN_SCREEN
 import kz.arctan.castexam.R
+import kz.arctan.castexam.common.presentation.buttons.BackButton
 import kz.arctan.castexam.common.presentation.buttons.DefaultButton
 import kz.arctan.castexam.common.presentation.buttons.RegisterButton
 import kz.arctan.castexam.common.presentation.images.RoundedImage
 import kz.arctan.castexam.common.presentation.texts.TextFieldWithIcon
+import kz.arctan.castexam.ui.theme.CastexamTheme
 
 @Composable
-fun RegistrationScreen(
+fun RegisterScreen(
     navController: NavController,
     viewModel: RegistrationViewModel = viewModel()
 ) {
-    RegistrationView(
-        name = viewModel.uiState.name,
-        onNameChange = { viewModel.acceptIntent(RegistrationIntent.NameChange(it)) },
-        surname = viewModel.uiState.surname,
-        onSurnameChange = { viewModel.acceptIntent(RegistrationIntent.SurnameChange(it)) },
-        username = viewModel.uiState.username,
-        onUsernameChange = { viewModel.acceptIntent(RegistrationIntent.UsernameChange(it)) },
-        password = viewModel.uiState.password,
-        onPasswordChange = { viewModel.acceptIntent(RegistrationIntent.PasswordChange(it)) },
-        register = { viewModel.acceptIntent(RegistrationIntent.Register) },
-        navigateToStartScreen = { navController.popBackStack() },
-        navigateToLoginScreen = { navController.navigate(LOGIN_SCREEN) }
-    )
+    Surface(modifier = Modifier.fillMaxSize()) {
+        RegistrationView(
+            name = viewModel.uiState.name,
+            onNameChange = { viewModel.acceptIntent(RegistrationIntent.NameChange(it)) },
+            surname = viewModel.uiState.surname,
+            onSurnameChange = { viewModel.acceptIntent(RegistrationIntent.SurnameChange(it)) },
+            username = viewModel.uiState.username,
+            onUsernameChange = { viewModel.acceptIntent(RegistrationIntent.UsernameChange(it)) },
+            password = viewModel.uiState.password,
+            onPasswordChange = { viewModel.acceptIntent(RegistrationIntent.PasswordChange(it)) },
+            register = { viewModel.acceptIntent(RegistrationIntent.Register) },
+            navigateToStartScreen = { navController.popBackStack() },
+            navigateToLoginScreen = { navController.navigate(LOGIN_SCREEN) }
+        )
+    }
 }
 
 @Composable
@@ -66,7 +71,6 @@ fun RegistrationView(
         RoundedImage(
             image = painterResource(id = R.drawable.registration_image),
             modifier = Modifier
-                .scale(0.9f)
                 .height(350.dp)
         )
         Text(
@@ -97,20 +101,14 @@ fun RegistrationView(
             onValueChange = onPasswordChange,
             icon = Icons.Default.Lock,
             placeHolder = stringResource(id = R.string.password),
+            isPassword = true
         )
         Column {
             RegisterButton(
                 onRegister = { register(); navigateToLoginScreen() },
                 modifier = Modifier.width(250.dp)
             )
-            DefaultButton(
-                text = stringResource(id = R.string.back),
-                onClick = navigateToStartScreen,
-                leadingIcon = Icons.Default.ArrowBack,
-                backgroundColor = MaterialTheme.colors.onSecondary,
-                modifier = Modifier.width(250.dp),
-                contentColor = Color.White
-            )
+            BackButton(onBack = navigateToStartScreen)
         }
     }
 }
@@ -118,17 +116,19 @@ fun RegistrationView(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RegistrationScreenPreview() {
-    RegistrationView(
-        name = "",
-        onNameChange = {},
-        surname = "",
-        onSurnameChange = {},
-        username = "",
-        onUsernameChange = {},
-        password = "",
-        onPasswordChange = {},
-        register = { /*TODO*/ },
-        navigateToStartScreen = { /*TODO*/ }) {
+    CastexamTheme {
+        RegistrationView(
+            name = "",
+            onNameChange = {},
+            surname = "",
+            onSurnameChange = {},
+            username = "",
+            onUsernameChange = {},
+            password = "",
+            onPasswordChange = {},
+            register = { /*TODO*/ },
+            navigateToStartScreen = { /*TODO*/ }) {
 
+        }
     }
 }

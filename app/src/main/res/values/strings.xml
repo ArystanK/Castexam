@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Castexam</string>
+    <string name="app_name" translatable="false">Castexam</string>
     <string name="create_and_practice">Create and practice</string>
 
     <string name="log_in">Log in</string>
@@ -7,7 +7,7 @@
 
     <string name="name">Name</string>
     <string name="surname">Surname</string>
-    <string name="username">Username</string>
+    <string name="username" translatable="false">Username</string>
     <string name="password">Password</string>
 
     <string name="back">Back</string>
@@ -15,4 +15,12 @@
     <string name="greetings">Hello, %1$s</string>
 
     <string name="open_settings">Open settings</string>
+
+    <string name="tests">Tests</string>
+    <string name="questions">Questions</string>
+    <string name="open">Open</string>
+
+    <string name="add_new_subject">Add new subject</string>
+    <string name="subjects">Subjects</string>
+    <string name="show_password">Show password</string>
 </resources>

@@ -15,4 +15,4 @@ val DarkBackGroundColor = Color(0xFF141414)
 
 val Black = Color(0xFF000000)
 
-val Grey = Color(0xFFB4B4B4)
+val Gray = Color(0xFFB4B4B4)
