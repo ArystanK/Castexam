@@ -71,7 +71,7 @@ fun RegistrationView(
         RoundedImage(
             image = painterResource(id = R.drawable.registration_image),
             modifier = Modifier
-                .height(350.dp)
+                .height(260.dp)
         )
         Text(
             text = stringResource(id = R.string.register),

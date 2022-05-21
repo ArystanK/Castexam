@@ -63,7 +63,7 @@ fun LoginView(
         RoundedImage(
             image = painterResource(id = R.drawable.login_image),
             modifier = Modifier
-                .height(300.dp)
+                .height(260.dp)
         )
         Text(
             text = stringResource(id = R.string.log_in).uppercase(),
@@ -92,7 +92,7 @@ fun LoginView(
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             LoginButton(onLogin = onLogin, modifier = Modifier.width(250.dp))
             BackButton(onBack = onBack)
