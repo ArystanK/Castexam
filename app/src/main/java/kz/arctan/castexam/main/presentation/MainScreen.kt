@@ -12,10 +12,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import kz.arctan.castexam.R
 import kz.arctan.castexam.main.domain.entities.Subject
+import kz.arctan.castexam.main.presentation.components.CreateSubjectDialog
 import kz.arctan.castexam.main.presentation.components.NewSubjectTile
 import kz.arctan.castexam.main.presentation.components.SubjectTile
 import kz.arctan.castexam.main.presentation.components.UserInfoTopBar
@@ -35,6 +37,15 @@ fun MainScreen(
         onAddNewSubject = { mainViewModel.acceptIntent(MainIntent.AddNewSubject) },
         onOpenSubjectDetail = { mainViewModel.acceptIntent(MainIntent.OpenSubject(it)) }
     )
+    if (mainViewModel.mainUiState.showCreateSubjectDialog) {
+        Dialog(onDismissRequest = { mainViewModel.acceptIntent(MainIntent.DismissDialog) }) {
+            CreateSubjectDialog(
+                title = mainViewModel.mainUiState.newSubjectTitle,
+                onTitleChange = { mainViewModel.acceptIntent(MainIntent.NewSubjectTitleChange(it)) },
+                createNewSubject = {mainViewModel.acceptIntent(MainIntent.CreateNewSubject)}
+            )
+        }
+    }
 }
 
 @Composable

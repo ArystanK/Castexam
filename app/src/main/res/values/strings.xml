@@ -23,4 +23,9 @@
     <string name="add_new_subject">Add new subject</string>
     <string name="subjects">Subjects</string>
     <string name="show_password">Show password</string>
+    <string name="creating_a_subject">Creating a subject</string>
+
+    <string name="come_up_with_a_title">Come up with a <b>title</b></string>
+
+    <string name="create">Create</string>
 </resources>

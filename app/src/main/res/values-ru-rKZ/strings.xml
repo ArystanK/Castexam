@@ -15,4 +15,7 @@
     <string name="add_new_subject">Добавить новый предмет</string>
     <string name="subjects">Предметы</string>
     <string name="show_password">Показать пароль</string>
+    <string name="creating_a_subject">Создание предмета</string>
+    <string name="come_up_with_a_title">Придумайте название</string>
+    <string name="create">Создать</string>
 </resources>

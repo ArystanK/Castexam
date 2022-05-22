@@ -7,5 +7,6 @@ data class MainUiState(
     val username: String = "",
     val name: String = "",
     val surname: String = "",
-
+    val showCreateSubjectDialog: Boolean = false,
+    val newSubjectTitle: String = "",
 )

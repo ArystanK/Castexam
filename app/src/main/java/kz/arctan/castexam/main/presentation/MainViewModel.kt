@@ -10,6 +10,19 @@ class MainViewModel : ViewModel() {
         private set
 
     fun acceptIntent(mainIntent: MainIntent) {
-
+        when (mainIntent) {
+            MainIntent.AddNewSubject -> {
+                mainUiState = mainUiState.copy(showCreateSubjectDialog = true)
+            }
+            MainIntent.OpenSettings -> TODO()
+            is MainIntent.OpenSubject -> TODO()
+            MainIntent.DismissDialog -> {
+                mainUiState = mainUiState.copy(showCreateSubjectDialog = false)
+            }
+            is MainIntent.NewSubjectTitleChange -> {
+                mainUiState = mainUiState.copy(newSubjectTitle = mainIntent.title)
+            }
+            MainIntent.CreateNewSubject -> TODO()
+        }
     }
 }
