@@ -6,5 +6,4 @@ sealed interface RegistrationIntent {
     data class UsernameChange(val username: String) : RegistrationIntent
     data class PasswordChange(val password: String) : RegistrationIntent
     object Register : RegistrationIntent
-    object GoBack : RegistrationIntent
 }

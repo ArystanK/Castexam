@@ -126,8 +126,8 @@ fun RegistrationScreenPreview() {
             onUsernameChange = {},
             password = "",
             onPasswordChange = {},
-            register = { /*TODO*/ },
-            navigateToStartScreen = { /*TODO*/ }) {
+            register = {  },
+            navigateToStartScreen = {  }) {
 
         }
     }

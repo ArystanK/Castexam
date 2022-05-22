@@ -16,9 +16,6 @@ class RegistrationViewModel(
 
     fun acceptIntent(registrationIntent: RegistrationIntent) {
         when (registrationIntent) {
-            RegistrationIntent.GoBack -> {
-                //TODO
-            }
             is RegistrationIntent.NameChange -> {
                 uiState = uiState.copy(
                     name = registrationIntent.name
