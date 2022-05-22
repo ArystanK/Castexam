@@ -18,4 +18,6 @@
     <string name="creating_a_subject">Создание предмета</string>
     <string name="come_up_with_a_title">Придумайте название</string>
     <string name="create">Создать</string>
+    <string name="daily_question">Ежедневный вопрос</string>
+    <string name="oops_this_is_wrong">УУПС… ОТВЕТ НЕВЕРНЫЙ</string>
 </resources>

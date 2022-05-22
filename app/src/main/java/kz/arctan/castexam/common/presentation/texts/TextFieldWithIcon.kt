@@ -74,7 +74,7 @@ fun TextFieldWithIcon(
         keyboardOptions = KeyboardOptions(
             keyboardType = if (isPassword) KeyboardType.Password else KeyboardType.Text
         ),
-        modifier = Modifier.height(48.dp)
+        modifier = Modifier.height(52.dp)
     )
 }
 

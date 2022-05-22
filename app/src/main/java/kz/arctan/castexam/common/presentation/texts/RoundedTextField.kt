@@ -24,7 +24,6 @@ fun RoundedTextField(value: String, onValueChange: (String) -> Unit) {
     BasicTextField(
         value = value,
         onValueChange = onValueChange,
-//        shape = RoundedCornerShape(12.dp),
         textStyle = TextStyle(
             fontSize = 12.sp,
             textAlign = TextAlign.Center,
@@ -32,12 +31,6 @@ fun RoundedTextField(value: String, onValueChange: (String) -> Unit) {
             color = Color.White
         ),
         singleLine = true,
-//        colors = TextFieldDefaults.textFieldColors(
-//            disabledIndicatorColor = Color.Transparent,
-//            errorIndicatorColor = Color.Transparent,
-//            focusedIndicatorColor = Color.Transparent,
-//            unfocusedIndicatorColor = Color.Transparent
-//        ),
         modifier = Modifier
             .height(32.dp)
             .width(216.dp),

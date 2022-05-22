@@ -64,7 +64,8 @@ fun CreateSubjectDialog(
             ) {
                 Text(
                     text = stringResource(id = R.string.create),
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.White
                 )
             }
         }

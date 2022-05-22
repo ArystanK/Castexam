@@ -1,6 +1,5 @@
 package kz.arctan.castexam.ui.theme
 
-import android.icu.text.CaseMap
 import androidx.compose.ui.graphics.Color
 
 val Purple200 = Color(0xFFBB86FC)

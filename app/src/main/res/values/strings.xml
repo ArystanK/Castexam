@@ -28,4 +28,8 @@
     <string name="come_up_with_a_title">Come up with a <b>title</b></string>
 
     <string name="create">Create</string>
+
+    <string name="daily_question">Daily Question</string>
+
+    <string name="oops_this_is_wrong">OOPS… THIS IS WRONG</string>
 </resources>

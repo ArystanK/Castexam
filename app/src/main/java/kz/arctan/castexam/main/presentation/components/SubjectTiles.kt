@@ -109,7 +109,8 @@ fun NewSubjectTile(
             .height(192.dp)
             .width(144.dp),
         shape = RoundedCornerShape(16.dp),
-        onClick = onAddNewSubject
+        onClick = onAddNewSubject,
+        backgroundColor = MaterialTheme.colors.background
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,

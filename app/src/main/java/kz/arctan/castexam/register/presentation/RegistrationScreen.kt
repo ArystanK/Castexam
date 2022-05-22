@@ -66,7 +66,7 @@ fun RegistrationView(
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(5.dp)
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
         RoundedImage(
             image = painterResource(id = R.drawable.registration_image),
@@ -78,31 +78,37 @@ fun RegistrationView(
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.ExtraBold,
         )
-        TextFieldWithIcon(
-            value = name,
-            onValueChange = onNameChange,
-            icon = Icons.Default.Badge,
-            placeHolder = stringResource(id = R.string.name)
-        )
-        TextFieldWithIcon(
-            value = surname,
-            onValueChange = onSurnameChange,
-            icon = Icons.Default.Badge,
-            placeHolder = stringResource(id = R.string.surname)
-        )
-        TextFieldWithIcon(
-            value = username,
-            onValueChange = onUsernameChange,
-            icon = Icons.Default.AccountCircle,
-            placeHolder = stringResource(id = R.string.username)
-        )
-        TextFieldWithIcon(
-            value = password,
-            onValueChange = onPasswordChange,
-            icon = Icons.Default.Lock,
-            placeHolder = stringResource(id = R.string.password),
-            isPassword = true
-        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            TextFieldWithIcon(
+                value = name,
+                onValueChange = onNameChange,
+                icon = Icons.Default.Badge,
+                placeHolder = stringResource(id = R.string.name)
+            )
+            TextFieldWithIcon(
+                value = surname,
+                onValueChange = onSurnameChange,
+                icon = Icons.Default.Badge,
+                placeHolder = stringResource(id = R.string.surname)
+            )
+            TextFieldWithIcon(
+                value = username,
+                onValueChange = onUsernameChange,
+                icon = Icons.Default.AccountCircle,
+                placeHolder = stringResource(id = R.string.username)
+            )
+            TextFieldWithIcon(
+                value = password,
+                onValueChange = onPasswordChange,
+                icon = Icons.Default.Lock,
+                placeHolder = stringResource(id = R.string.password),
+                isPassword = true
+            )
+        }
         Column {
             RegisterButton(
                 onRegister = { register(); navigateToLoginScreen() },
@@ -126,8 +132,8 @@ fun RegistrationScreenPreview() {
             onUsernameChange = {},
             password = "",
             onPasswordChange = {},
-            register = {  },
-            navigateToStartScreen = {  }) {
+            register = { },
+            navigateToStartScreen = { }) {
 
         }
     }
