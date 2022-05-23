@@ -1,13 +1,17 @@
 package kz.arctan.castexam.main.presentation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,7 +46,7 @@ fun MainScreen(
             CreateSubjectDialog(
                 title = mainViewModel.mainUiState.newSubjectTitle,
                 onTitleChange = { mainViewModel.acceptIntent(MainIntent.NewSubjectTitleChange(it)) },
-                createNewSubject = {mainViewModel.acceptIntent(MainIntent.CreateNewSubject)}
+                createNewSubject = { mainViewModel.acceptIntent(MainIntent.CreateNewSubject) }
             )
         }
     }
@@ -59,7 +63,9 @@ fun MainView(
     onOpenSubjectDetail: (Int) -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -71,6 +77,7 @@ fun MainView(
         )
         Text(
             text = stringResource(id = R.string.subjects),
+            color = contentColorFor(backgroundColor = MaterialTheme.colors.background),
             fontWeight = FontWeight.SemiBold,
             fontSize = 24.sp
         )

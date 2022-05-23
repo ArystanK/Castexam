@@ -9,6 +9,7 @@ import androidx.glance.appwidget.cornerRadius
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.height
 import androidx.glance.layout.padding
+import androidx.glance.layout.width
 
 @Composable
 fun Option(text: String, onClick: Action) {
@@ -16,7 +17,7 @@ fun Option(text: String, onClick: Action) {
         text = text,
         onClick = onClick,
         modifier = GlanceModifier
-            .fillMaxWidth()
+            .width(200.dp)
             .height(32.dp)
             .padding(4.dp)
             .cornerRadius(24.dp),

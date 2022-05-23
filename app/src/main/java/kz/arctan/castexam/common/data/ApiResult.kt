@@ -1,7 +1,7 @@
 package kz.arctan.castexam.common.data
 
 sealed class ApiResult<out T>(val status: ApiStatus, val data: T?, val message: String?) {
-    data class Success<out R>(val _data: R?) : ApiResult<R>(
+    data class Success<T>(val _data: T?) : ApiResult<T>(
         status = ApiStatus.SUCCESS,
         data = _data,
         message = null
@@ -13,7 +13,7 @@ sealed class ApiResult<out T>(val status: ApiStatus, val data: T?, val message: 
         message = exception
     )
 
-    data class Loading<out R>(val _data: R?, val isLoading: Boolean) : ApiResult<R>(
+    data class Loading<T>(val _data: T?, val isLoading: Boolean) : ApiResult<T>(
         status = ApiStatus.LOADING,
         data = _data,
         message = null

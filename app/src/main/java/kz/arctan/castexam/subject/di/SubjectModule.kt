@@ -23,7 +23,7 @@ object SubjectModule {
     fun provideAthInterceptor(
         dataStoreManager: DataStoreManager
     ): AuthInterceptor {
-        val token = dataStoreManager.getFromDataStore()
+        val token = dataStoreManager.getTokenFromDataStore()
         return AuthInterceptor(token)
     }
 

@@ -5,23 +5,23 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Badge
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import kz.arctan.castexam.Navigation.LOGIN_SCREEN
 import kz.arctan.castexam.R
 import kz.arctan.castexam.common.presentation.buttons.BackButton
-import kz.arctan.castexam.common.presentation.buttons.DefaultButton
 import kz.arctan.castexam.common.presentation.buttons.RegisterButton
 import kz.arctan.castexam.common.presentation.images.RoundedImage
 import kz.arctan.castexam.common.presentation.texts.TextFieldWithIcon
@@ -30,7 +30,7 @@ import kz.arctan.castexam.ui.theme.CastexamTheme
 @Composable
 fun RegisterScreen(
     navController: NavController,
-    viewModel: RegistrationViewModel = viewModel()
+    viewModel: RegistrationViewModel = hiltViewModel()
 ) {
     Surface(modifier = Modifier.fillMaxSize()) {
         RegistrationView(

@@ -5,6 +5,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.Preferences
 import androidx.glance.GlanceModifier
 import androidx.glance.LocalContext
@@ -14,9 +15,7 @@ import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.appWidgetBackground
 import androidx.glance.background
 import androidx.glance.currentState
-import androidx.glance.layout.Alignment
-import androidx.glance.layout.Column
-import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.*
 import androidx.glance.state.GlanceStateDefinition
 import androidx.glance.state.PreferencesGlanceStateDefinition
 import androidx.glance.text.Text
@@ -55,9 +54,9 @@ class DailyQuestionWidget : GlanceAppWidget() {
                 )
             )
             Option(text = "Arman", onClick = object : Action {})
+            Spacer(modifier = GlanceModifier.height(8.dp))
             Option(text = "Nurlan", onClick = object : Action {})
         }
-
     }
 
     override val stateDefinition: GlanceStateDefinition<*> = PreferencesGlanceStateDefinition
@@ -65,5 +64,4 @@ class DailyQuestionWidget : GlanceAppWidget() {
 
 class DailyQuestionWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget = DailyQuestionWidget()
-
 }

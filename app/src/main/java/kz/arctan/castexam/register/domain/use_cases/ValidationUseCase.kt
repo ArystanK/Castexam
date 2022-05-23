@@ -1,6 +1,6 @@
 package kz.arctan.castexam.register.domain.use_cases
 
-class ValidationUseCase {
+object ValidationUseCase {
     fun validatePassword(password: String) = PasswordValidationResult(
         hasEightCharacters = password.length >= 8,
         hasUpperCaseLetters = password.any { it.isUpperCase() },

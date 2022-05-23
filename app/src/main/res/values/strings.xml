@@ -32,4 +32,5 @@
     <string name="daily_question">Daily Question</string>
 
     <string name="oops_this_is_wrong">OOPS… THIS IS WRONG</string>
+    <string name="edit">Edit</string>
 </resources>
